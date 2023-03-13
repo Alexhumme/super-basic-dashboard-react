@@ -1,0 +1,8 @@
+@import 'colors';
+
+.route-container{
+    padding: 50px;
+    margin: 5px;
+    width: -webkit-fill-available;
+    @include color-types;
+}

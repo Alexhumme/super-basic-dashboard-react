@@ -1,3 +1,11 @@
+@use 'navbar';
+@use 'sidebar';
+@use 'route';
+@use 'login.scss';
+@use 'footer';
+@use 'buttons';
+
+
 html{
   height: 100%;
 }
@@ -9,6 +17,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+main{
+  min-height: 100%;
+  display: flex;
 }
 #root{
   height: 100%;

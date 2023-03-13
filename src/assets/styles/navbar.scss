@@ -1,0 +1,31 @@
+@import 'colors';
+
+.nav{
+    padding: 0px 20px;
+    @include color-types;
+    .navbar{
+        height: 100px;
+        width: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .navlist{
+            list-style: none;
+            display: inline-flex;
+            padding: 0px;
+            height: 100%;
+            align-items: center;
+            li{
+                height: 100%;
+                width: 100px;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                cursor: pointer;
+                &:hover{
+                    background-color: $danger-color-l;
+                }
+            }
+        }
+    }
+}

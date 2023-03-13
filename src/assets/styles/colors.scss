@@ -1,0 +1,50 @@
+$primary-color: rgb(252, 121, 14);
+$primary-color-l: rgb(255, 169, 98);
+$danger-color: red;
+$danger-color-l: rgb(255, 85, 85);
+$mistery-color: rgb(206, 0, 206);
+$mistery-color-l: rgb(212, 109, 212);
+$info-color: rgb(10, 157, 255);
+$info-color-l: rgb(116, 176, 255);
+$success-color: green;
+$success-color-l: rgb(60, 153, 60);
+$warning-color: yellow;
+$warning-color-l: rgb(255, 255, 126);
+$light-color: rgb(255, 244, 227);
+$light-color-l: white;
+$secondary-color: rgb(199, 199, 199);
+$secondary-color-l: rgb(226, 226, 226);
+$dark-color: black;
+$dark-color-l: rgb(48, 48, 48);
+
+@mixin color-type($color1:$primary-color, $color2:$primary-color-l,$light:$light-color) {
+    background-color: $color1;
+    color: $light;
+    &.outline {
+        background-color: transparent;
+        color: $color1;
+        border: solid 2px $color1;
+    }
+    &:hover {
+        &.btn {
+            background-color: $color2;
+            &.outline {
+                background-color: $color1;
+                color: $light;
+                border-color: $color2;
+            }
+        }
+    }
+}
+
+@mixin color-types {
+    &.primary { @include color-type($primary-color, $primary-color-l) }
+    &.danger { @include color-type($danger-color, $danger-color-l) }
+    &.mistery { @include color-type($mistery-color, $mistery-color-l) }
+    &.info { @include color-type($info-color, $info-color-l) }
+    &.success { @include color-type($success-color, $success-color-l) }
+    &.warning { @include color-type($warning-color, $warning-color-l, $dark-color) }
+    &.light { @include color-type($light-color, $light-color-l, $dark-color) }
+    &.dark { @include color-type($dark-color, $dark-color-l) }
+    &.secondary { @include color-type($secondary-color, $secondary-color-l) }
+}

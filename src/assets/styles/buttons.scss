@@ -1,0 +1,21 @@
+@import 'colors';
+
+button,
+input[type=button] { cursor: pointer }
+
+.block-btn {
+    width: 100%;
+}
+
+.btn {
+    transition: 0.2s;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: bolder;
+    margin: 5px;
+    @include color-types;
+    .block-btn {
+        width: 100%;
+    }
+}

@@ -6,8 +6,12 @@ export default function Layout({children}){
     return (
         <>
         <Nabvar />
-        <Sidebar />
-        <main>{children}</main>
+        <main>
+            <Sidebar />
+            <div className='route-container secondary'>
+                {children}
+            </div>
+        </main>
         <Footer />
         </>
     )

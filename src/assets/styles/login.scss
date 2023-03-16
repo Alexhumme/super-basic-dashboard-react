@@ -1,8 +1,37 @@
 @import 'colors';
+@import 'colors';
 
 .ingresar {
     width: 400px;
     height: 400px;
     background-color: $light-color-l;
     color: $secondary-color;
+    .selectors {
+        height: 75px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        button{
+            height: 50px;
+            width: 130px;
+            border: none;
+            font-weight: 900;
+            font-size:medium;
+            color: $dark-color-l;
+            &.selected{ background-color:  $secondary-color-l }
+            &:not(.selected) { background-color: $light-color-l }
+            &:hover{ background-color: $secondary-color }
+        }
+    }
+    .container-form{
+        height: 325px;
+        padding: 15px;
+        color: $dark-color-l;
+        background-color: $secondary-color-l;
+        form{
+            height: 280px;
+            padding: 20px;
+            display: grid;
+        }
+    }
 }

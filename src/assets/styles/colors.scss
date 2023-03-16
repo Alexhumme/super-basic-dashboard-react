@@ -1,4 +1,4 @@
-$primary-color: rgb(252, 121, 14);
+$primary-color: rgb(255, 136, 38);
 $primary-color-l: rgb(255, 169, 98);
 $danger-color: red;
 $danger-color-l: rgb(255, 85, 85);
@@ -17,9 +17,9 @@ $secondary-color-l: rgb(226, 226, 226);
 $dark-color: black;
 $dark-color-l: rgb(48, 48, 48);
 
-@mixin color-type($color1:$primary-color, $color2:$primary-color-l,$light:$light-color) {
+@mixin color-type($color1:$primary-color, $color2:$primary-color-l,$font-color:$light-color) {
     background-color: $color1;
-    color: $light;
+    color: $font-color;
     &.outline {
         background-color: transparent;
         color: $color1;
@@ -28,9 +28,10 @@ $dark-color-l: rgb(48, 48, 48);
     &:hover {
         &.btn {
             background-color: $color2;
+            border-color: $color1;
             &.outline {
                 background-color: $color1;
-                color: $light;
+                color: $font-color;
                 border-color: $color2;
             }
         }

@@ -1,18 +1,42 @@
+import { useLocation } from "react-router-dom";
 import Nabvar from './Navbar'
 import Footer from './Footer'
 import Sidebar from './Sidebar'
+import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react';
 
-export default function Layout({children}){
+export default function Layout({ children }) {
+    const location = useLocation().pathname
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        let authToken = sessionStorage.getItem('Auth Token')
+        if (!authToken) {
+            navigate('/')
+        }
+    }, [])
+
     return (
         <>
-        <Nabvar />
-        <main>
-            <Sidebar />
-            <div className='route-container secondary'>
-                {children}
-            </div>
-        </main>
-        <Footer />
+            <Nabvar />
+            {
+                location !== '/'
+                    ?
+                    <main>
+                        <Sidebar />
+                        <div className='route-container secondary'>
+                            {children}
+                        </div>
+                    </main>
+                    :
+                    <main>
+                        <div className='home-container light'>
+                            {children}
+                        </div>
+                    </main>
+
+            }
+            <Footer />
         </>
     )
 }

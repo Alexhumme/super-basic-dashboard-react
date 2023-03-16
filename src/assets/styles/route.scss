@@ -6,3 +6,29 @@
     width: -webkit-fill-available;
     @include color-types;
 }
+.home-container{
+    display: grid;
+    grid-auto-rows: 470px 400px;
+    padding: 0px;
+    margin: 0px;
+    section{
+        padding: 0px 100px;
+        &.top{
+            border-bottom: solid 20px $primary-color;
+            background-image: url(../imgs/fondo-home.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            padding: 10px 100px;
+        }
+        &.bottom {
+            display: flex;
+            align-items: center;
+            color: $dark-color-l;
+            img{
+                width: 250px;
+                height: 250px;
+            }
+        }
+    }
+}

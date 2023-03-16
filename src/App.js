@@ -6,18 +6,19 @@ import Admin from './views/Admin';
 import Instructores from './views/Admin/Instructores';
 
 function App() {
+  const auth = sessionStorage.getItem('Auth token')
   return (
-    <Layout>
-      <BrowserRouter>
+    <BrowserRouter>
+      <Layout auth={auth}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path='Admin/'>
-            <Route path='' element={<Admin />}/>
-            <Route path='Instructores' element={<Instructores />}/>
+            <Route path='' element={<Admin />} />
+            <Route path='Instructores' element={<Instructores />} />
           </Route>
         </Routes>
-      </BrowserRouter>
-    </Layout>
+      </Layout>
+    </BrowserRouter>
   );
 }
 

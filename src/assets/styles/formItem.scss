@@ -1,0 +1,24 @@
+@import 'colors';
+
+.formItem{
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    i{
+        color: $danger-color;
+    }
+    .txt{
+        border: solid 2px $secondary-color;
+        padding: 15px;
+        width: auto;
+        background-color: $secondary-color-l;
+        border-radius: 5px;
+        &:focus{
+            background-color: $secondary-color;
+        }
+    }
+    .select{
+        width: 65%;
+    }
+}

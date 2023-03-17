@@ -14,7 +14,7 @@ export default function Layout({ children }) {
         if (!authToken) {
             navigate('/')
         }
-    }, [])
+    }, [navigate])
 
     return (
         <>
@@ -24,7 +24,7 @@ export default function Layout({ children }) {
                     ?
                     <main>
                         <Sidebar />
-                        <div className='route-container secondary'>
+                        <div className='route-container primary'>
                             {children}
                         </div>
                     </main>

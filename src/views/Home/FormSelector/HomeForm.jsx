@@ -2,6 +2,7 @@ import Button from "../../../components/common/Button"
 import FormItem from "../../../components/common/FormItem";
 import { useNavigate } from "react-router-dom";
 import { app } from "../../../firebase";
+import { ToastContainer, toast } from 'react-toastify';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 import { useState } from "react";
 
@@ -10,12 +11,14 @@ export default function HomeForm({ visible = true, type = 'Coordinador' }) {
     const [valorFiltro, setValorFiltro] = useState('')
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('')
+    const [loading, setLoading] = useState(false)
 
     const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const auth = getAuth(app)
+        setLoading(true)
         if (type === 'Consulta') {
             console.log(`consultar horario de ${filtro} ${valorFiltro}`)
         } else {
@@ -24,7 +27,10 @@ export default function HomeForm({ visible = true, type = 'Coordinador' }) {
                 console.log(`ingresando ${type} ${email} con contraseña ${password}`)
                 navigate("/admin")
             }).catch((err) => {
-                console.log(`${type} no se pudo ingresar con el correo ${email} y la contraseña ${password}`)
+                toast.error(`Correo o contraseña erroneos`, {
+                    position: toast.POSITION.TOP_RIGHT
+                })
+                setLoading(false)
             })
         }
     }
@@ -37,10 +43,10 @@ export default function HomeForm({ visible = true, type = 'Coordinador' }) {
                     {
                         !(type === 'Consulta') ?
                             <>
-                                <FormItem label='Documento' onChange={(e) => setEmail(e.target.value)} required />
+                                <FormItem label='Email' onChange={(e) => setEmail(e.target.value)} required />
                                 <FormItem label='Contraseña' type="password" onChange={(e) => setPassword(e.target.value)} required />
-                                <div><Button block type="submit">Iniciar sesion</Button></div>
-                                <div><Button outline>Recuperar contraseña</Button></div>
+                                <div><Button block type="submit" loading={loading}>Iniciar sesion</Button></div>
+                                <div><Button outline type="reset">Recuperar contraseña</Button></div>
                             </>
                             :
                             <>
@@ -48,10 +54,11 @@ export default function HomeForm({ visible = true, type = 'Coordinador' }) {
                                     'Ficha', 'Instructor', 'Ambiente'
                                 ]} />
                                 <FormItem label={filtro} onChange={(e) => setValorFiltro(e.target.value)} required />
-                                <div><Button block type="submit">Consultar</Button></div>
+                                <div><Button block type="submit" loading={loading}>Consultar</Button></div>
                             </>
                     }
                 </form>
+                <ToastContainer />
             </div>
         )
     } else {

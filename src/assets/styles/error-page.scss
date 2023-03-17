@@ -1,0 +1,9 @@
+@import 'colors';
+
+.error-page{
+    @include color-types;
+    .danger{
+        color: $danger-color;
+        font-weight: bolder;
+    }
+}

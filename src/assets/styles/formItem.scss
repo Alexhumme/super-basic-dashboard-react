@@ -9,16 +9,34 @@
         color: $danger-color;
     }
     .txt{
-        border: solid 2px $secondary-color;
         padding: 15px;
-        width: auto;
+        border: solid 2px $secondary-color;
         background-color: $secondary-color-l;
+        width: auto;
         border-radius: 5px;
         &:focus{
             background-color: $secondary-color;
         }
     }
+    .password{
+        width: auto;
+        display: flex;
+        .txt{
+            border-radius: 5px 0px 0px 5px;
+            width: 115px;
+        }
+        .btn{
+            height: 49px;
+            width: 54px;
+            border-radius: 0px 5px 5px 0px;
+            @include color-types;
+            margin: 0px;
+        }
+    }
     .select{
         width: 65%;
+    }
+    .radioGroup{
+        color: black;
     }
 }

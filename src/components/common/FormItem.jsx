@@ -1,4 +1,13 @@
-export default function FormItem({ label, type='text', opts = [], onChange=()=>{}, required }) {
+import { useState } from "react"
+
+export default function FormItem({ label='Input', type='text', opts = [], onChange=()=>{}, required }) {
+    const [pwVisible, setPwVisivle] = useState(false)
+    const showPw = ()=>{
+        pwVisible ? 
+        setPwVisivle(false)
+        :
+        setPwVisivle(true)
+    }
     return (
         <div className="formItem">
             <label>{required ? <i>*</i>:<></>}  {label}: </label>
@@ -10,13 +19,23 @@ export default function FormItem({ label, type='text', opts = [], onChange=()=>{
                     })}
                 </select>
                 : type === 'radio' ?
-                <div className="radioGroup">
+                <div className="radioGroup txt">
                     {opts.map((opt)=>{
-                        return <input type="radio" name={label} id={opt} key={opts.indexOf(opt)} onChange={onChange}/>
+                        return (
+                            <div className="" key={opts.indexOf(opt)}>
+                                <label htmlFor={opt}>{opt}</label>
+                                <input type="radio" name={label} id={opt} onChange={onChange}/>
+                            </div>
+                            )
                     })}
                 </div>
+                : type === 'password' ?
+                <div className="password">
+                <input type={pwVisible ? 'text' : 'password'} className="txt" required={required} onChange={onChange}/>
+                <button type="button" className="info btn" onClick={showPw}>ojo</button>
+                </div>
                 :
-                <input type={type} className={type === 'text' || type === 'password' ? 'txt' : ''} required={required} onChange={onChange}/>
+                <input type={type} className='txt' required={required} onChange={onChange}/>
             }
         </div>
     )

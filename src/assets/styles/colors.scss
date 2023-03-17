@@ -20,10 +20,10 @@ $dark-color-l: rgb(48, 48, 48);
 @mixin color-type($color1:$primary-color, $color2:$primary-color-l,$font-color:$light-color) {
     background-color: $color1;
     color: $font-color;
+    border-color: $color1;
     &.outline {
         background-color: transparent;
         color: $color1;
-        border: solid 2px $color1;
     }
     &:hover {
         &.btn {

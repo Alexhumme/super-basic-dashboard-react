@@ -1,3 +1,5 @@
+import showIcon from '../../assets/imgs/icons/visto.png'
+import hideIcon from '../../assets/imgs/icons/ocultar.png'
 import { useState } from "react"
 
 export default function FormItem({ label='Input', type='text', opts = [], onChange=()=>{}, required }) {
@@ -32,8 +34,10 @@ export default function FormItem({ label='Input', type='text', opts = [], onChan
                 : type === 'password' ?
                 <div className="password">
                 <input type={pwVisible ? 'text' : 'password'} className="txt" required={required} onChange={onChange}/>
-                <button type="button" className="info btn" onClick={showPw}>ojo</button>
+                <button type="button" className="info btn" onClick={showPw}> <img src={!pwVisible ? showIcon : hideIcon}/></button>
                 </div>
+                : type === 'textarea' || type === 'textArea' ?
+                <textarea name="" className='txt' id="" cols="30" rows="10"></textarea>
                 :
                 <input type={type} className='txt' required={required} onChange={onChange}/>
             }

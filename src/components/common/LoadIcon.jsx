@@ -1,4 +1,4 @@
-import icon from '../../assets/imgs/load.png'
+import icon from '../../assets/imgs/icons/load.png'
 
 export default function LoadIcon(){
     return (

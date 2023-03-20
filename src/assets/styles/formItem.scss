@@ -12,31 +12,41 @@
         padding: 15px;
         border: solid 2px $secondary-color;
         background-color: $secondary-color-l;
-        width: auto;
+        width: 180px;
         border-radius: 5px;
-        &:focus{
+        &:hover{
             background-color: $secondary-color;
         }
     }
     .password{
-        width: auto;
+        width: 214px;
         display: flex;
         .txt{
             border-radius: 5px 0px 0px 5px;
-            width: 115px;
+            width: 75%;
         }
         .btn{
             height: 49px;
-            width: 54px;
+            width: 25%;
             border-radius: 0px 5px 5px 0px;
             @include color-types;
             margin: 0px;
         }
     }
     .select{
-        width: 65%;
+        width:214px;
     }
     .radioGroup{
-        color: black;
+        color: $light-color;
+        div{
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            align-items: center;
+            margin: 3px 0px;
+            background-color: $dark-color-l;
+            border-radius: 20px;
+            padding: 3px;
+        }
     }
 }

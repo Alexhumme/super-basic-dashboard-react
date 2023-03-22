@@ -1,19 +1,22 @@
 @import 'colors';
 
-.route-container{
+.route-container {
     padding: 50px;
     margin: 5px;
     width: 100%;
     background-color: $secondary-color-l;
 }
-.home-container{
+
+.home-container {
     display: grid;
     grid-auto-rows: 470px 400px;
     padding: 0px;
     margin: 0px;
-    section{
+
+    section {
         padding: 0px 100px;
-        &.top{
+
+        &.top {
             border-bottom: solid 20px $primary-color;
             background-image: url(../imgs/fondo-home.jpg);
             background-repeat: no-repeat;
@@ -21,14 +24,25 @@
             background-position: center;
             padding: 10px 100px;
         }
+
         &.bottom {
             display: flex;
             align-items: center;
             color: $dark-color-l;
-            img{
+
+            img {
                 width: 250px;
                 height: 250px;
             }
         }
+    }
+}
+
+.body-container {
+    height: 100%;
+    transition: 0.2s;
+
+    &.spaced {
+        margin-left: 50px;
     }
 }

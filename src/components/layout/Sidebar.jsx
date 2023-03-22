@@ -20,7 +20,7 @@ export default function Sidebar() {
         {
             text: 'Ambientes',
             to: '/admin/ambientes'
-        }
+        },
     ]
     return (
         <aside className="sidebar light">

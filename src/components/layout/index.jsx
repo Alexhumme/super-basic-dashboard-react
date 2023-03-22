@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 export default function Layout({ children }) {
     const location = useLocation().pathname
     const navigate = useNavigate();
+    const home = location === '/'
 
     useEffect(() => {
         let authToken = sessionStorage.getItem('Auth Token')
@@ -18,25 +19,16 @@ export default function Layout({ children }) {
 
     return (
         <>
-            <Nabvar />
-            {
-                location !== '/'
-                    ?
-                    <main>
-                        <Sidebar />
-                        <div className='route-container'>
-                            {children}
-                        </div>
-                    </main>
-                    :
-                    <main>
-                        <div className='home-container light'>
-                            {children}
-                        </div>
-                    </main>
-
-            }
-            <Footer />
+            {!home && <Sidebar />}
+            <div className={"body-container"+(!home ? ' spaced' : '')}>
+                <Nabvar />
+                <main>
+                    <div className={home ? 'home-container light' : 'route-container'}>
+                        {children}
+                    </div>
+                </main>
+                <Footer />
+            </div>
         </>
     )
 }

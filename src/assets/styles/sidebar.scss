@@ -2,12 +2,19 @@
 
 .sidebar{
     width: 200px;
-    height: auto;
+    height: 100%;
     display: grid;
     justify-content: center;
     align-items: center;
     background-color: $light-color-l;
     padding: 30px;
+
+    top: 0px;
+    position: fixed;
+    margin-left: -260px;
+    z-index: 10;
+    
+    transition: 0.2s;
     .user{
         height: 240px;
         width: 200px;
@@ -31,9 +38,24 @@
     }
     ul{
         list-style: none;
-        padding: 0px;
+        padding: 10px;
+        margin-bottom: 100px;
         li{
-
+            button, input{
+                border-radius: 0px;
+            }
         }
+    }
+    &::before{
+        position: absolute;
+        left: 100%;
+        background-color: $primary-color-l;
+        width: 50px;
+        height: 100%;
+        cursor: context-menu;
+        content: '';
+    }
+    &:hover{
+        margin-left: 0px;
     }
 }

@@ -24,7 +24,7 @@ export default function Layout({ children }) {
                     ?
                     <main>
                         <Sidebar />
-                        <div className='route-container primary'>
+                        <div className='route-container'>
                             {children}
                         </div>
                     </main>

@@ -6,5 +6,34 @@
     display: grid;
     justify-content: center;
     align-items: center;
-    @include color-types;
+    background-color: $light-color-l;
+    padding: 30px;
+    .user{
+        height: 240px;
+        width: 200px;
+        display: grid;
+        justify-content: center;
+        text-align: center;
+        .avatar {
+            border-radius: 90px;
+            img{
+                border-radius: 120px;
+                height: 200px;
+                width: 200px;
+            }
+        }
+        .nombre{
+            font-weight: bolder;
+        }  
+        .cargo{
+            color: $dark-color-l;
+        }
+    }
+    ul{
+        list-style: none;
+        padding: 0px;
+        li{
+
+        }
+    }
 }

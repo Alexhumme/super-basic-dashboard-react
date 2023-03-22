@@ -34,7 +34,7 @@ export default function FormItem({ label='Input', type='text', opts = [], onChan
                 : type === 'password' ?
                 <div className="password">
                 <input type={pwVisible ? 'text' : 'password'} className="txt" required={required} onChange={onChange}/>
-                <button type="button" className="info btn" onClick={showPw}> <img src={!pwVisible ? showIcon : hideIcon}/></button>
+                <button type="button" className="info btn" onClick={showPw}> <img src={!pwVisible ? showIcon : hideIcon} alt='ver'/></button>
                 </div>
                 : type === 'textarea' || type === 'textArea' ?
                 <textarea name="" className='txt' id="" cols="30" rows="10"></textarea>

@@ -2,7 +2,7 @@ import Button from "../../../components/common/Button"
 import FormItem from "../../../components/common/FormItem";
 import { useNavigate } from "react-router-dom";
 import { app } from "../../../firebase";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 import { useState } from "react";
 
@@ -24,7 +24,6 @@ export default function HomeForm({ visible = true, type = 'Coordinador' }) {
         } else {
             signInWithEmailAndPassword(auth, email, password).then((response) => {
                 sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
-                console.log(`ingresando ${type} ${email} con contraseña ${password}`)
                 navigate("/admin")
             }).catch((err) => {
                 toast.error(`Correo o contraseña erroneos`, {
@@ -58,7 +57,6 @@ export default function HomeForm({ visible = true, type = 'Coordinador' }) {
                             </>
                     }
                 </form>
-                <ToastContainer />
             </div>
         )
     } else {

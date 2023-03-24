@@ -21,12 +21,21 @@ $dark-color-l: rgb(48, 48, 48);
     background-color: $color1;
     color: $font-color;
     border-color: $color1;
+    &.disabled{
+        background-color: $color2;
+        border-color: $color2;
+    }
     &.outline {
         background-color: transparent;
         color: $color1;
+        &.disabled{
+            border-color: $color2;
+            color: $color2;
+        }
     }
+    
     &:hover {
-        &.btn {
+        &.btn:not(.disabled) {
             background-color: $color2;
             border-color: $color1;
             &.outline {
@@ -36,6 +45,7 @@ $dark-color-l: rgb(48, 48, 48);
             }
         }
     }
+    
 }
 
 @mixin color-types {

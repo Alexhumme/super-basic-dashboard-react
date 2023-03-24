@@ -1,18 +1,21 @@
-//import LoadIcon from "./LoadIcon"
+import LoadIcon from "./LoadIcon"
 
-export default function Button({children='press', cType='primary', outline=false, block=false, action=()=>{}, loading=false, type='button'}){
+export default function Button({children='press', cType='primary', outline=false, block=false, action=()=>{}, loading=false, type='button', disabled}){
+    
     return(
-        <input 
+        <button 
         type={type}
-        className={'btn '+cType+(outline ? ' outline':'')+(block ? ' block-btn':'')} 
+        className={'btn '+cType+(outline ? ' outline':'')+(block ? ' block-btn':'')+(disabled ? ' disabled':'')} 
+        disabled={disabled}
         onClick={action}
-        value={
+        >
+            {
                 !loading 
                 ?
                 children
                 :
-                'cargando...'
+                LoadIcon()
             }
-        />
+        </button>
     )
 }

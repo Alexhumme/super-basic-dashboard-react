@@ -4,6 +4,7 @@ import Footer from './Footer'
 import Sidebar from './Sidebar'
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 
 export default function Layout({ children }) {
     const location = useLocation().pathname
@@ -14,6 +15,9 @@ export default function Layout({ children }) {
         let authToken = sessionStorage.getItem('Auth Token')
         if (!authToken) {
             navigate('/')
+            toast.info('Por favor complete el ingreso',{
+                position: toast.POSITION.BOTTOM_RIGHT
+            })
         }
     }, [navigate])
 
@@ -28,6 +32,7 @@ export default function Layout({ children }) {
                     </div>
                 </main>
                 <Footer />
+                <ToastContainer></ToastContainer>
             </div>
         </>
     )

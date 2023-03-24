@@ -1,7 +1,12 @@
 export default function Admin() {
     return (
         <>
-            Admin index
+            <div className="module-title">
+                Pagina principal
+            </div>
+            <div>
+                contenido
+            </div>
         </>
     )
 }

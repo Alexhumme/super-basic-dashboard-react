@@ -16,11 +16,15 @@
                 height: 50px;
                 filter: invert(100%) sepia(20%) saturate(0%) hue-rotate(359deg) brightness(109%) contrast(101%);
             }
+            cursor: pointer;
             display: flex;
             align-items: center;
             font-size: large;
             font-weight: bold;
             font-style: normal;
+            height: 100%;
+            transition: 0.1s;
+            padding: 0px 15px;
         }
         .navlist{
             list-style: none;
@@ -34,9 +38,14 @@
                 align-items: center;
                 display: flex;
                 justify-content: center;
+                transition: 0.1s;
+                color: $secondary-color-l;
                 cursor: pointer;
                 &:hover{
-                    background-color: $danger-color-l;
+                    background-color: $primary-color-l;
+                }
+                &.selected{
+                    color: $light-color-l;
                 }
             }
         }

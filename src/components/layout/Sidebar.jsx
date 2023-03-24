@@ -1,25 +1,21 @@
 import Avatar from "../common/Avatar"
-import NavbarItem from "./SidebarItem"
+import SidebarItem from "./SidebarItem"
 import { useLocation } from "react-router-dom"
 
 export default function Sidebar() {
     const location = useLocation().pathname
     const rutas = [
         {
-            text: 'Home',
-            to: '/admin/'
+            text: 'Cuenta',
+            to: '/admin/tools/miCuenta'
         },
         {
-            text: 'Instructores',
-            to: '/admin/instructores'
+            text: 'Notificaciones',
+            to: false
         },
         {
-            text: 'Fichas',
-            to: '/admin/fichas'
-        },
-        {
-            text: 'Ambientes',
-            to: '/admin/ambientes'
+            text: 'Usuarios',
+            to: false
         },
     ]
     return (
@@ -33,13 +29,13 @@ export default function Sidebar() {
                 {
                     rutas.map(ruta => {
                         return (
-                            <NavbarItem 
+                            <SidebarItem
                                 to={ruta.to} 
                                 key={rutas.indexOf(ruta)} 
                                 active={ruta.to === location}
                                 >
                                     {ruta.text}
-                            </NavbarItem>
+                            </SidebarItem>
                         )
                     })
 

@@ -49,13 +49,34 @@
     &::before{
         position: absolute;
         left: 100%;
-        background-color: $primary-color-l;
+        background-color: $dark-color-l;
         width: 50px;
         height: 100%;
         cursor: context-menu;
         content: '';
+        transition: 0.1s;
     }
+    &::after{
+        position: absolute;
+        left: 100%;
+        top: 0px;
+        background-color: $primary-color-l;
+        width: 50px;
+        height: 100px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        content: url(../imgs/icons/right-arrow.png);
+        transition: 0.1s;
+    }
+    
     &:hover{
         margin-left: 0px;
+        &::before{
+            width: 20px;
+        }
+        &::after{
+            transform: scaleX(-1);
+        }
     }
 }

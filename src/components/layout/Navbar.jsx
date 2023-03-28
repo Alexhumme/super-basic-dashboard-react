@@ -9,18 +9,22 @@ export default function Navbar() {
     const rutas = [
         {
             text: 'Principal',
+            toolTip: 'Panel de control',
             to: '/admin/'
         },
         {
             text: 'Instructores',
+            toolTip: 'Administrar instructores',
             to: '/admin/administracion/instructores'
         },
         {
             text: 'Fichas',
+            toolTip: 'Administrar fichas',
             to: '/admin/administracion/fichas'
         },
         {
             text: 'Ambientes',
+            toolTip: 'Administrar ambientes',
             to: '/admin/administracion/ambientes'
         },
     ]
@@ -45,6 +49,7 @@ export default function Navbar() {
                                         <NavbarItem
                                             to={ruta.to}
                                             key={rutas.indexOf(ruta)}
+                                            toolTip = {ruta.toolTip}
                                         >
                                             {ruta.text}
                                         </NavbarItem>

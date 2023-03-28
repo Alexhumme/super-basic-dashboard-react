@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom"
 
-export default function NavbarItem({children, to, action}){
+export default function NavbarItem({children, to, action, toolTip}){
     const navigate = useNavigate()
     const location = useLocation().pathname
     const act =()=>{
@@ -12,6 +12,13 @@ export default function NavbarItem({children, to, action}){
     return(
         <li className={to === location ?  "selected" : ""} onClick={act}>
             {children}
+            {
+                toolTip 
+                ?
+                <span className="toolTip">{toolTip}</span>
+                :
+                ''
+            }
         </li>
     )
 }

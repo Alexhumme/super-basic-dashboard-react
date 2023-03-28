@@ -26,7 +26,8 @@ export default function Instructores(){
             'id',
             'nombre',
             'cedula',
-            'telefono'
+            'telefono',
+            'direccion',
         ]
     }
     return (

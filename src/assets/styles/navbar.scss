@@ -47,6 +47,7 @@
                 &.selected{
                     color: $light-color-l;
                 }
+                @include tool-tip;
             }
         }
     }

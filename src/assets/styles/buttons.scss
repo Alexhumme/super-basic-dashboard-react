@@ -1,6 +1,6 @@
 @import 'colors';
 
-input[type=radio] { cursor: pointer }
+input[type=radio], input[type=checkbox] { cursor: pointer }
 
 .block-btn {
     width: 100%;

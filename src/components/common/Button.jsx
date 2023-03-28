@@ -25,7 +25,7 @@ export default function Button({children='', cType='primary', outline=false, blo
                 icon 
                 ?
                 <Icon type={icon}/>
-                : 'button'
+                : ''
             }
             {
                 toolTip 

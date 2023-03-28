@@ -1,25 +1,18 @@
-import load from '../../../assets/imgs/icons/load.png';
-import eye_on from '../../../assets/imgs/icons/visto.png';
-import eye_off from '../../../assets/imgs/icons/ocultar.png';
-import trashcan from '../../../assets/imgs/icons/delete.png';
-import edit from '../../../assets/imgs/icons/pencil.png';
-import warning from '../../../assets/imgs/icons/warning.png';
-import download from '../../../assets/imgs/icons/download.png';
-import info from '../../../assets/imgs/icons/info.png';
-
 export default function Icon({type, style={}}){
     return (
         <img
             style={style}
             src={
-            type === 'load' ? load
-            : type === 'eye_on' ? eye_on 
-            : type === 'eye_off' ? eye_off 
-            : type === 'trashcan' ? trashcan 
-            : type === 'edit' ? edit 
-            : type === 'info' ? info
-            : type === 'download' ? download
-            : type === 'warning' ? warning
+            type === 'load' ? require('../../../assets/imgs/icons/load.png')
+            : type === 'eye_on' ? require('../../../assets/imgs/icons/visto.png')
+            : type === 'eye_off' ? require('../../../assets/imgs/icons/ocultar.png') 
+            : type === 'trashcan' ? require('../../../assets/imgs/icons/delete.png')
+            : type === 'edit' ? require('../../../assets/imgs/icons/pencil.png')
+            : type === 'info' ? require('../../../assets/imgs/icons/info.png')
+            : type === 'download' ? require('../../../assets/imgs/icons/download.png')
+            : type === 'warning' ? require('../../../assets/imgs/icons/warning.png')
+            : type === 'work' ? require('../../../assets/imgs/icons/trabajar.png')
+            : type === 'asign' ? require('../../../assets/imgs/icons/asignar.png')
             : '' 
         } 
         className = {'icon '+type}

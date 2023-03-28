@@ -1,4 +1,5 @@
 import '../../assets/styles/dataTable.scss'
+import Button from './Button'
 
 export default function DataTable({data={cols:[],rows:[{id:''}]}, title='titulo'}){
     return (
@@ -27,6 +28,13 @@ export default function DataTable({data={cols:[],rows:[{id:''}]}, title='titulo'
                                         return (col === 'id' ?  <th key={col}>{row[col]}</th> : <td key={col}>{row[col]}</td>)
                                     })
                                 }
+                                <td className='opciones'>
+                                    <Button cType='danger' icon='trashcan' toolTip='Eliminar'></Button>
+                                    <Button cType='info' icon='info'></Button>
+                                    <Button cType='secondary' icon='edit'></Button>
+                                    <Button cType='success' icon='download'></Button>
+                                    <Button cType='warning' icon='warning'></Button>
+                                </td>
                             </tr>
                         )
                     })

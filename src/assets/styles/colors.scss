@@ -57,6 +57,27 @@ $dark-color-l: rgb(48, 48, 48);
     &.warning { @include color-type($warning-color, $warning-color-l, $dark-color) }
     &.light { @include color-type($light-color, $light-color-l, $dark-color) }
     &.dark { @include color-type($dark-color, $dark-color-l) }
-    &.secondary { @include color-type($secondary-color, $secondary-color-l) }
+    &.secondary { @include color-type($secondary-color, $secondary-color-l, $dark-color) }
 }
 
+@mixin tool-tip{
+        .toolTip{
+            visibility: hidden;
+            width: 100px;
+            background-color: $dark-color-l;
+            color: $light-color;
+            text-align: center;
+            font-size: smaller;
+            padding: 5px 0;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 1;
+            margin-top: 80px;
+        }
+        &:hover {
+            .toolTip {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+}

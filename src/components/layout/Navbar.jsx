@@ -8,7 +8,7 @@ export default function Navbar() {
     const auth = sessionStorage.getItem('Auth Token')
     const rutas = [
         {
-            text: 'Home',
+            text: 'Principal',
             to: '/admin/'
         },
         {
@@ -31,7 +31,7 @@ export default function Navbar() {
     return (
         <nav className="nav primary">
             <div className="navbar">
-                <i className="icon" onClick={() => navigate('/')}>
+                <i className="iconPage" onClick={() => navigate('/')}>
                     <img src={logo} alt="Logo-Sena" />
                     Horarios Sena
                 </i>
@@ -53,7 +53,7 @@ export default function Navbar() {
 
                             }
                         </ul>
-                        <Button cType="light" outline action={handleLogout}>Log out</Button>
+                        <Button cType="light" outline action={handleLogout} toolTip='Cerrar sesion'>Log out</Button>
                     </>
                 }
 

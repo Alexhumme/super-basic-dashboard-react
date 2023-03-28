@@ -1,6 +1,6 @@
-import LoadIcon from "./LoadIcon"
+import Icon from "./Icon"
 
-export default function Button({children='press', cType='primary', outline=false, block=false, action=()=>{}, loading=false, type='button', disabled}){
+export default function Button({children='', cType='primary', outline=false, block=false, action=()=>{}, loading=false, type='button', icon='', toolTip='', disabled}){
     
     return(
         <button 
@@ -10,11 +10,29 @@ export default function Button({children='press', cType='primary', outline=false
         onClick={action}
         >
             {
-                !loading 
+                loading 
                 ?
-                children
+                <Icon type='load'/>
                 :
-                LoadIcon()
+                children
+                ?
+                    icon
+                    ?
+                    <>{children} <Icon type={icon} style={{marginLeft: 5}}/></>
+                    :
+                    children
+                :
+                icon 
+                ?
+                <Icon type={icon}/>
+                : 'button'
+            }
+            {
+                toolTip 
+                ?
+                <span className="toolTip">{toolTip}</span>
+                :
+                ''
             }
         </button>
     )

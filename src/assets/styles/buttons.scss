@@ -16,6 +16,7 @@ input[type=radio], input[type=checkbox] { cursor: pointer }
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    &.round{ border-radius: 999px; }
     &:not(.disabled){ cursor: pointer }
     @include color-types;
     .block-btn {

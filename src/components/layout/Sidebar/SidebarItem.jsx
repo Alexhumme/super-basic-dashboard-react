@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import Button from "../common/Button"
+import Button from "../../common/Button"
 
 export default function NavbarItem({children, to=false, active=false, action=false}){
     let able = action ? true : to ? true : false

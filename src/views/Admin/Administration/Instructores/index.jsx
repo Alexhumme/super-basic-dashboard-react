@@ -13,7 +13,8 @@ export default function Instructores(){
                 id: '2',
                 nombre: 'item 2',
                 cedula: '2',
-                telefono: '002'
+                telefono: '002',
+                direccion: 'cr24b cll12c-43'
             },
             {
                 id: '3',

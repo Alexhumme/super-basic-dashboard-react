@@ -1,4 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom"
+import Button from "../../common/Button"
 
 export default function NavbarItem({children, to, action, toolTip}){
     const navigate = useNavigate()
@@ -10,7 +11,8 @@ export default function NavbarItem({children, to, action, toolTip}){
         to && navigate(to)
     }
     return(
-        <li className={to === location ?  "selected" : ""} onClick={act}>
+        <li>
+        <Button className={to === location ?  "selected" : ""} action={act} block>
             {children}
             {
                 toolTip 
@@ -19,6 +21,7 @@ export default function NavbarItem({children, to, action, toolTip}){
                 :
                 ''
             }
+        </Button>
         </li>
     )
 }

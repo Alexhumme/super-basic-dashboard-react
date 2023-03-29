@@ -1,11 +1,11 @@
 import Icon from "./Icon"
 
-export default function Button({children='', cType='primary', outline=false, block=false, action=()=>{}, loading=false, type='button', icon='', toolTip='', disabled}){
+export default function Button({children='', cType='primary', outline=false, block=false, action=()=>{}, loading=false, type='button', round=false, icon='', toolTip='', disabled}){
     
     return(
         <button 
         type={type}
-        className={'btn '+cType+(outline ? ' outline':'')+(block ? ' block-btn':'')+(disabled ? ' disabled':'')} 
+        className={'btn '+cType+(outline ? ' outline':'')+(block ? ' block-btn':'')+(disabled ? ' disabled':'')+(round ? ' round':'')} 
         disabled={disabled}
         onClick={action}
         >

@@ -1,4 +1,3 @@
-import Avatar from "../common/Avatar"
 import SidebarItem from "./SidebarItem"
 import { useLocation } from "react-router-dom"
 
@@ -6,24 +5,29 @@ export default function Sidebar() {
     const location = useLocation().pathname
     const rutas = [
         {
-            text: 'Cuenta',
-            to: '/admin/tools/miCuenta'
+            text: 'Panel de control',
+            to: '/admin/'
         },
         {
-            text: 'Notificaciones',
-            to: false
+            text: 'Instructores',
+            to: '/admin/administracion/instructores'
         },
         {
-            text: 'Usuarios',
-            to: false
+            text: 'Fichas',
+            to: '/admin/administracion/fichas'
         },
+        {
+            text: 'Ambientes',
+            to: '/admin/administracion/ambientes'
+        },
+        {
+            text: 'Competencias'
+        }
     ]
     return (
         <aside className="sidebar light">
-            <div className="user">
-                <Avatar></Avatar>
-                <span className="nombre">nombre</span>
-                <span className="cargo">cargo</span>
+            <div>
+                Administracion
             </div>
             <ul>
                 {

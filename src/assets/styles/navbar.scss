@@ -26,28 +26,74 @@
             transition: 0.1s;
             padding: 0px 15px;
         }
-        .navlist{
-            list-style: none;
-            display: inline-flex;
-            padding: 0px;
-            height: 100%;
-            align-items: center;
-            li{
-                height: 100%;
-                width: 100px;
-                align-items: center;
+        .userIcon{
+            @include tool-tip;
+            .notifications {
+                background-color: $danger-color;
+                border-radius: 100px;
                 display: flex;
+                width: 15px;
+                height: 15px;
+                padding: 5px;
+                align-items: center;
                 justify-content: center;
-                transition: 0.1s;
-                color: $secondary-color-l;
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                color: $light-color;
+            }
+            img{
+                width: 50px;
+                height: 50px;
+                border-radius: 999px;
+                border: solid 2px $secondary-color;
                 cursor: pointer;
-                &:hover{
-                    background-color: $primary-color-l;
+            }
+            &:hover{
+                img{
+                    border-color: $secondary-color-l;
                 }
-                &.selected{
-                    color: $light-color-l;
+            }
+            &.active{
+                img{
+                    border-color: $light-color-l;
                 }
-                @include tool-tip;
+            }
+            
+        }
+        .userMenu{
+            visibility: hidden;
+            position: absolute;
+            border-radius: 7px;
+            width: 200px;
+            right: 10px;
+            top: 90px;
+            padding-top: 20px;
+            display: grid;
+            justify-content: center;
+            text-align: center;
+            background-color: $secondary-color;
+            .avatar {
+                border-radius: 90px;
+                img{
+                    border-radius: 120px;
+                    height: 150px;
+                    width: 150px;
+                }
+            }
+            .nombre{
+                font-weight: bolder;
+                color: $dark-color;
+            }  
+            .cargo{
+                color: $dark-color-l;
+            }
+            .userMenulist{
+                padding: 0px;
+                list-style: none;
+                .btn{
+                    transition: 0s;
+                }
             }
         }
     }

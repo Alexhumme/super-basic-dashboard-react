@@ -1,8 +1,6 @@
-import SidebarItem from "./SidebarItem"
-import { useLocation } from "react-router-dom"
+import MenuComponent from "../../common/MenuComponent"
 
 export default function Sidebar() {
-    const location = useLocation().pathname
     const rutas = [
         {
             text: 'Panel de control',
@@ -29,22 +27,7 @@ export default function Sidebar() {
             <div>
                 Administracion
             </div>
-            <ul>
-                {
-                    rutas.map(ruta => {
-                        return (
-                            <SidebarItem
-                                to={ruta.to} 
-                                key={rutas.indexOf(ruta)} 
-                                active={ruta.to === location}
-                                >
-                                    {ruta.text}
-                            </SidebarItem>
-                        )
-                    })
-
-                }
-            </ul>
+            <MenuComponent data={rutas}/>
         </aside>
     )
 }

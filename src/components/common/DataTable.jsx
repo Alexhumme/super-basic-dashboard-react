@@ -1,7 +1,7 @@
 import '../../assets/styles/dataTable.scss'
 import Button from './Button'
 
-export default function DataTable({data={cols:[],rows:[{id:''}]}, title='titulo'}){
+export default function DataTable({data={cols:[],rows:[]}, title='titulo'}){
     return (
         <table className="datatable">
             <thead>

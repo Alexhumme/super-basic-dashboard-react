@@ -8,6 +8,7 @@ import Instructores from './views/Admin/Administration/Instructores';
 import Ambientes from './views/Admin/Administration/Ambientes';
 import Fichas from './views/Admin/Administration/Fichas';
 import MiCuenta from './views/Admin/Tools/MiCuenta';
+import Usuarios from './views/Admin/Tools/Usuarios';
 import ErrorPage from './error-page';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
             <Route path='tools/'>
               <Route path='' element={<MiCuenta />} />
               <Route path='miCuenta' element={<MiCuenta />} />
+              <Route path='Usuarios' element={<Usuarios />} />
             </Route>
           </Route>
           <Route path='*' element={<ErrorPage />} />

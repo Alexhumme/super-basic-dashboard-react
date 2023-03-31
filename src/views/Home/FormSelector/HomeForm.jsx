@@ -42,8 +42,8 @@ export default function HomeForm({ visible = true, type = 'Coordinador' }) {
                     {
                         !(type === 'Consulta') ?
                             <>
-                                <FormItem label='Email' onChange={(e) => setEmail(e.target.value)} required />
-                                <FormItem label='Contraseña' type="password" onChange={(e) => setPassword(e.target.value)} required />
+                                <FormItem label='Email' onChange={(e) => setEmail(e.target.value)} required hatLabel />
+                                <FormItem label='Contraseña' type="password" onChange={(e) => setPassword(e.target.value)} required hatLabel/>
                                 <div><Button block type="submit" loading={loading}>Iniciar sesion</Button></div>
                                 <div><Button outline type="reset">Recuperar contraseña</Button></div>
                             </>

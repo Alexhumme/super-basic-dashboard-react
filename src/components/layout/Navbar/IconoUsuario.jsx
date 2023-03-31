@@ -11,12 +11,12 @@ export default function IconoUsuario() {
         setHidden(true)
     }
     
-    const notificaciones = 3;
+    const notificaciones = 9;
     return (
         <>
             <div className={"userIcon "+(hidden ? "" : "active")} onClick={handleHidden}>
                 <Avatar/>
-                <span className="notifications">{notificaciones}</span>
+                {notificaciones ? <span className="notifications">{notificaciones}</span> : ''}
                 <span className="toolTip">Menu de usuario</span>
             </div>
             <MenuUsuario hidden={hidden} />

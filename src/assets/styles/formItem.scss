@@ -5,8 +5,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    &.hatLabel{
+        display: inline-block;
+        label{
+            margin-left: -10px;
+            display: block;
+            font-size: smaller;
+        }
+    }
     i{
         color: $danger-color;
+    }
+    input:left{
+        color: red;
     }
     .txt{
         padding: 15px;

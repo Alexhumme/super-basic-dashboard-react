@@ -1,6 +1,5 @@
-import Button from '../../common/Button';
 import Avatar from '../../common/Avatar';
-import MenuUsuarioItem from './MenuUsuarioItem';
+import MenuComponent from '../../common/MenuComponent';
 import { useNavigate } from "react-router-dom";
 
 export default function MenuUsuario({ hidden }) {
@@ -9,19 +8,25 @@ export default function MenuUsuario({ hidden }) {
         sessionStorage.removeItem('Auth Token')
         navigate("/")
     }
+    
     const rutas = [
         {
             text: 'Cuenta',
             to: '/admin/tools/miCuenta'
         },
         {
+            text: 'Usuarios',
+            to: '/admin/tools/Usuarios'
+        },
+        {
             text: 'Notificaciones',
             to: false
         },
         {
-            text: 'Usuarios',
-            to: false
-        },
+            text: 'Cerrar sesion',
+            cType: 'light',
+            action: handleLogout
+        }
     ]
     return (
         <div className="userMenu" style={{
@@ -30,25 +35,7 @@ export default function MenuUsuario({ hidden }) {
             <Avatar></Avatar>
             <span className="nombre">nombre</span>
             <span className="cargo">cargo</span>
-            <ul className="userMenulist">
-                {
-                    rutas.map(ruta => {
-                        return (
-                            <MenuUsuarioItem
-                                to={ruta.to}
-                                key={rutas.indexOf(ruta)}
-                                toolTip={ruta.toolTip}
-                            >
-                                {ruta.text}
-                            </MenuUsuarioItem>
-                        )
-                    })
-
-                }
-                <li>
-                    <Button cType='light' block action={handleLogout}>Log Out</Button>
-                </li>
-            </ul>
+            <MenuComponent data={rutas}/>
         </div>
     )
 }

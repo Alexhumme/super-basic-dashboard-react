@@ -1,0 +1,19 @@
+@import 'colors';
+
+.userData{
+    border: solid 2px $secondary-color;
+    .user__header{
+        text-align: center;
+        padding: 20px;
+        img{
+            border: solid 2px $dark-color-l;
+        }
+    }
+    .user__body{
+        text-align: center;
+    }
+    .user__footer{
+        text-align: right;
+        padding: 20px;
+    }
+}

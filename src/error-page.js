@@ -10,7 +10,7 @@ export default function ErrorPage() {
                 <p className="secondary">
                     Puede que la pagina que busques no exista.
                   </p>
-                <Button cType="light" outline action={()=>window.history.back()}>Volver</Button>
+                <Button outline cType="light" action={()=>window.history.back()}>Volver</Button>
             </div>
         </div>
     </div>

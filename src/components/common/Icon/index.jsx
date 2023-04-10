@@ -1,21 +1,16 @@
-export default function Icon({type, style={}}){
-    return (
-        <img
-            style={style}
-            src={
-            type === 'load' ? require('../../../assets/imgs/icons/load.png')
-            : type === 'eye_on' ? require('../../../assets/imgs/icons/visto.png')
-            : type === 'eye_off' ? require('../../../assets/imgs/icons/ocultar.png') 
-            : type === 'trashcan' ? require('../../../assets/imgs/icons/delete.png')
-            : type === 'edit' ? require('../../../assets/imgs/icons/pencil.png')
-            : type === 'info' ? require('../../../assets/imgs/icons/info.png')
-            : type === 'download' ? require('../../../assets/imgs/icons/download.png')
-            : type === 'warning' ? require('../../../assets/imgs/icons/warning.png')
-            : type === 'work' ? require('../../../assets/imgs/icons/trabajar.png')
-            : type === 'asign' ? require('../../../assets/imgs/icons/asignar.png')
-            : '' 
-        } 
-        className = {'icon '+type}
-        alt="" />
-    )
+export default function Icon({ type, iconStyle={} }){
+    const myIcon = type === 'load' ? require('react-icons/bi').BiLoader
+    : type === 'eye_on' ? require('react-icons/fa').FaEye
+    : type === 'eye_off' ? require('react-icons/fa').FaEyeSlash
+    : type === 'delete' ? require('react-icons/fa').FaTrash
+    : type === 'edit' ? require('react-icons/fa').FaEdit
+    : type === 'info' ? require('react-icons/fa').FaInfo
+    : type === 'add' ? require('react-icons/fa').FaPlus
+    : type === 'cross' ? require('react-icons/fa').FaTimes
+    : type === 'check' ? require('react-icons/fa').FaCheck
+    : type === 'download' ? require('react-icons/fa').FaDownload
+    : type === 'warning' ? require('react-icons/fi').FiAlertTriangle
+    : type === 'asign' ? require('react-icons/bs').BsFillCalendarPlusFill
+    : '' 
+    return myIcon({style:iconStyle})
 }

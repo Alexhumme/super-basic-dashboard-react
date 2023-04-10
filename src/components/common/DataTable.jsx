@@ -31,7 +31,7 @@ export default function DataTable({data={cols:[],rows:[]}, title='titulo'}){
                                     })
                                 }
                                 <td className='opciones'>
-                                    <Button cType='danger' icon='trashcan' toolTip='Eliminar'/>
+                                    <Button cType='danger' icon='delete' toolTip='Eliminar'/>
                                     <Button cType='info' icon='info' toolTip='Informacion'/>
                                     <Button cType='secondary' icon='edit' toolTip='Editar'/>
                                     <Button cType='success' icon='download' toolTip='Descargar'/>

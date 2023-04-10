@@ -8,8 +8,8 @@ export default function Ambientes() {
             <div className="module-title">
                 Ambientes
                 <span>
-                    <Button cType="primary" icon="asign">Agregar</Button>
-                    <Button cType="danger" icon="trashcan" disabled>Eliminar seleccion</Button>    
+                    <Button cType="primary" icon="add">Agregar</Button>
+                    <Button cType="danger" icon="delete" disabled>Eliminar seleccion</Button>    
                 </span>
             </div>
             <div>

@@ -4,11 +4,8 @@ import MenuUsuario from "./MenuUsuario";
 
 export default function IconoUsuario() {
     const [hidden, setHidden] = useState(true)
-    const handleHidden = ()=>{
-        hidden ? 
-        setHidden(false)
-        :
-        setHidden(true)
+    const handleHidden = () =>{
+        setHidden(!hidden)
     }
     
     const notificaciones = 9;

@@ -18,6 +18,15 @@ input[type=radio], input[type=checkbox] { cursor: pointer }
     justify-content: center;
     &.round{ border-radius: 999px; }
     &:not(.disabled){ cursor: pointer }
+    &.loading{
+        font-size: larger;
+        svg{
+            animation-name: rotate;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+    }
     @include color-types;
     .block-btn {
         width: 100%;

@@ -36,8 +36,8 @@ export default function Instructores(){
             <div className="module-title">
                 Instructores
                 <span>
-                    <Button cType="primary" icon="asign">Agregar</Button>
-                    <Button cType="danger" icon="trashcan" disabled>Eliminar seleccion</Button>    
+                    <Button cType="primary" icon="add">Agregar</Button>
+                    <Button cType="danger" icon="delete" disabled>Eliminar seleccion</Button>    
                 </span>
             </div>
             <div>

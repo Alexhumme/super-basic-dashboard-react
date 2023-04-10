@@ -7,8 +7,8 @@ export default function Fichas() {
             <div className="module-title">
                 Fichas
                 <span>
-                    <Button cType="primary" icon="asign">Agregar</Button>
-                    <Button cType="danger" icon="trashcan" disabled>Eliminar seleccion</Button>    
+                    <Button cType="primary" icon="add">Agregar</Button>
+                    <Button cType="danger" icon="delete" disabled>Eliminar seleccion</Button>    
                 </span>
             </div>
             <div>

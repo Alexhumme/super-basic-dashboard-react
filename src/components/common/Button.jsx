@@ -5,7 +5,17 @@ export default function Button({children='', cType='primary', outline=false, blo
     return(
         <button 
         type={type}
-        className={'btn '+cType+(outline ? ' outline':'')+(block ? ' block-btn':'')+(disabled ? ' disabled':'')+(round ? ' round':'')} 
+        className={
+            `
+            btn 
+            ${cType} 
+            ${outline ? ' outline':''} 
+            ${block ? ' block-btn':''}
+            ${disabled ? ' disabled':''}
+            ${round ? ' round':''}
+            ${loading ? ' loading':''}
+            `
+        } 
         disabled={disabled}
         onClick={action}
         >
@@ -18,7 +28,7 @@ export default function Button({children='', cType='primary', outline=false, blo
                 ?
                     icon
                     ?
-                    <>{children} <Icon type={icon} style={{marginLeft: 5}}/></>
+                    <>{children} <Icon type={icon} iconStyle={{ marginLeft: '10px' }}/></>
                     :
                     children
                 :

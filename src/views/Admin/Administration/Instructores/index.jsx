@@ -1,5 +1,6 @@
 import DataTable from "../../../../components/common/DataTable"
-import Button from "../../../../components/common/Button"
+import ModuleHead from "../../../../components/common/ModuleHead"
+
 export default function Instructores(){
     const testData = {
         rows: [
@@ -31,15 +32,10 @@ export default function Instructores(){
             'direccion',
         ]
     }
+    
     return (
         <>
-            <div className="module-title">
-                Instructores
-                <span>
-                    <Button cType="primary" icon="add">Agregar</Button>
-                    <Button cType="danger" icon="delete" disabled>Eliminar seleccion</Button>    
-                </span>
-            </div>
+            <ModuleHead title={"Instructores"} />
             <div>
                 <DataTable title="Prueba Instructores" data={testData}/>
             </div>

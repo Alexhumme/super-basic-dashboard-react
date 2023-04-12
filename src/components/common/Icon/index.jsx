@@ -11,6 +11,7 @@ export default function Icon({ type, iconStyle={} }){
     : type === 'download' ? require('react-icons/fa').FaDownload
     : type === 'warning' ? require('react-icons/fi').FiAlertTriangle
     : type === 'asign' ? require('react-icons/bs').BsFillCalendarPlusFill
+    : type === 'search' ? require('react-icons/fa').FaSearch
     : '' 
     return myIcon({style:iconStyle})
 }

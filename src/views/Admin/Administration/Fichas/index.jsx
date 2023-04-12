@@ -1,16 +1,10 @@
-import Button from "../../../../components/common/Button"
 import DataTable from "../../../../components/common/DataTable"
+import ModuleHead from "../../../../components/common/ModuleHead"
 
 export default function Fichas() {
     return (
         <>
-            <div className="module-title">
-                Fichas
-                <span>
-                    <Button cType="primary" icon="add">Agregar</Button>
-                    <Button cType="danger" icon="delete" disabled>Eliminar seleccion</Button>    
-                </span>
-            </div>
+            <ModuleHead title={"Fichas"} />
             <div>
                 <DataTable title="Fichas"/>
             </div>

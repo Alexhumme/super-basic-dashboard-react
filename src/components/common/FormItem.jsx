@@ -1,7 +1,7 @@
 import Icon from "./Icon"
 import { useState } from "react"
 
-export default function FormItem({ children, label = 'Input', type = 'text', opts = [], onChange = () => { }, required, disabled = false, value, hatLabel = false }) {
+export default function FormItem({ children, label = '', type = 'text', opts = [], onChange = () => { }, required, disabled = false, value, hatLabel = false }) {
     const [pwVisible, setPwVisivle] = useState(false)
     const showPw = () => {
         pwVisible ?

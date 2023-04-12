@@ -1,20 +1,13 @@
 import DataTable from "../../../components/common/DataTable"
 import FormItem from "../../../components/common/FormItem"
 import Button from "../../../components/common/Button"
-import { FaAngleRight } from "react-icons/fa"
+import ModuleHead from "../../../components/common/ModuleHead"
 
 export default function Usuarios(){
     
     return (
         <>        
-            <div className="module-title">
-                {FaAngleRight()}
-                Usuarios
-                <span>
-                    <Button cType="primary" icon="add">Agregar</Button>
-                    <Button cType="danger" icon="delete" disabled>Eliminar seleccion</Button>    
-                </span>    
-            </div>
+            <ModuleHead title={"Usuarios"}/>
             <div>
                 <FormItem type="password" value={'000000'} label="contraseña de Acceso aprendiz" disabled >
 

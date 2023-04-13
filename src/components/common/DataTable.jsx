@@ -31,12 +31,11 @@ export default function DataTable({data={cols:[],rows:[]}, title='titulo'}){
                                     })
                                 }
                                 <td className='opciones'>
-                                    <Button cType='danger' icon='delete' toolTip='Eliminar'/>
-                                    <Button cType='info' icon='info' toolTip='Informacion'/>
-                                    <Button cType='secondary' icon='edit' toolTip='Editar'/>
-                                    <Button cType='success' icon='download' toolTip='Descargar'/>
-                                    <Button cType='warning' icon='warning'toolTip='Alertar'/>
-                                    <Button cType='primary' icon='asign'toolTip='Asignar a horario'/>
+                                    <Button cType='danger' round icon='delete' toolTip='Eliminar'/>
+                                    <Button cType='info' round icon='info' toolTip='Informacion'/>
+                                    <Button cType='secondary' round icon='edit' toolTip='Editar'/>
+                                    <Button cType='success' round icon='download' toolTip='Descargar'/>
+                                    <Button cType='primary' round icon='asign'toolTip='Asignar a horario'/>
                                 </td>
                             </tr>
                         )

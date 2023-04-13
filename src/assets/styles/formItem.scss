@@ -25,8 +25,17 @@
         background-color: $secondary-color-l;
         width: 180px;
         border-radius: 5px;
-        &:hover{
-            background-color: $secondary-color;
+        transition: 0.2s;
+        &:hover:not(:disabled){
+            border-color: $info-color-l;
+        }
+        +.inputIcon{
+            color: $secondary-color;
+            position: absolute;
+            margin-left: -35px;
+            margin-top: 14.25px;
+            width: 20px;
+            height: 20px;
         }
     }
     .password{
@@ -48,16 +57,19 @@
         width:214px;
     }
     .radioGroup{
-        color: $light-color;
+        color: $dark-color-l;
         div{
             display: flex;
             width: 100%;
             justify-content: space-around;
             align-items: center;
-            margin: 3px 0px;
-            background-color: $dark-color-l;
-            border-radius: 20px;
-            padding: 3px;
+            margin: 5px 0px;
+            
+            border-bottom: solid 1px $secondary-color;
+            padding: 5px 3px 10px 3px;
         }
+    }
+    textArea{
+        width: 100%;
     }
 }

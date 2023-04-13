@@ -23,7 +23,7 @@ export default function Ambientes() {
                         'opcion 2',
                         'opcion 3',
                     ]} hatLabel />
-                    <FormItem label="Area de texto" type="textArea" />
+                    <FormItem label="Area de texto" hatLabel type="textArea" />
                 </div>
             </div>
             <div>

@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 import { useState } from "react";
 
-export default function HomeForm({ visible = true, type = 'Coordinador' }) {
+export default function HomeForm({ visible = true, type = 'Funcionario' }) {
     const [filtro, setFiltro] = useState('Ficha');
     const [valorFiltro, setValorFiltro] = useState('')
     const [email, setEmail] = useState('');

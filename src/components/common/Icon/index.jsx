@@ -1,4 +1,4 @@
-export default function Icon({ type, iconStyle={} }){
+export default function Icon({ type, iconStyle={}, className = ''}){
     const myIcon = type === 'load' ? require('react-icons/bi').BiLoader
     : type === 'eye_on' ? require('react-icons/fa').FaEye
     : type === 'eye_off' ? require('react-icons/fa').FaEyeSlash
@@ -12,6 +12,7 @@ export default function Icon({ type, iconStyle={} }){
     : type === 'warning' ? require('react-icons/fi').FiAlertTriangle
     : type === 'asign' ? require('react-icons/bs').BsFillCalendarPlusFill
     : type === 'search' ? require('react-icons/fa').FaSearch
+    : type === 'filter' ? require('react-icons/fa').FaFilter
     : '' 
-    return myIcon({style:iconStyle})
+    return myIcon({style:iconStyle, className: className})
 }

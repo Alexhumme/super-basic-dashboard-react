@@ -54,6 +54,9 @@
         font-family: monospace;
         content: '>';
         transition: 0.1s;
+        &::content {
+            width: 1000px;
+        }
     }
     
     &:hover{

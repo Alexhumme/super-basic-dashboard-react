@@ -5,10 +5,10 @@ export default function ModuleHead({title, table=null}){
     
     return (
         <div className="module-title">
-                <span>{ title }</span>
+                <b>{ title }</b>
                 <form onSubmit={(e)=>e.preventDefault()} className="module__query">
-                    <FormItem hatLabel />
-                    <Button type="submit" icon="search" cType="info" toolTip={`Consultar ${title}`}></Button>
+                    <FormItem hatLabel icon="search"/>
+                    <Button type="submit" icon="filter" cType="mistery" outline round toolTip={`Seleccionar filtro ${title}`}></Button>
                 </form>
                 <span>
                     <Button cType="primary" icon="add">Agregar</Button>

@@ -1,7 +1,7 @@
 import Icon from "./Icon"
 import { useState } from "react"
 
-export default function FormItem({ children, label = '', type = 'text', opts = [], onChange = () => { }, required, disabled = false, value, hatLabel = false }) {
+export default function FormItem({ children, label = '', type = 'text', opts = [], onChange = () => { }, required, disabled = false, value, hatLabel = false, icon = '' }) {
     const [pwVisible, setPwVisivle] = useState(false)
     const showPw = () => {
         pwVisible ?
@@ -19,28 +19,43 @@ export default function FormItem({ children, label = '', type = 'text', opts = [
                             return <option value={opt} key={opts.indexOf(opt)}>{opt}</option>
                         })}
                     </select>
-                    : type === 'radio' ?
-                        <div className="radioGroup txt">
-                            {opts.map((opt) => {
-                                return (
-                                    <div className="" key={opts.indexOf(opt)} id={label + type + disabled}>
-                                        <label htmlFor={opt}>{opt}</label>
-                                        <input type="radio" name={label} id={opt} onChange={onChange} disabled={disabled} value={value} />
-                                    </div>
-                                )
-                            })}
-                        </div>
-                        : type === 'password' ?
-                            <div className="password">
-                                <input type={pwVisible ? 'text' : 'password'} className="txt" required={required} onChange={onChange} disabled={disabled} value={value} id={label + type + disabled} />
-                                <button type="button" className="info btn" onClick={showPw}> <Icon type={pwVisible ? 'eye_on' : 'eye_off'} /></button>
-                            </div>
-                            : type === 'textarea' || type === 'textArea' ?
-                                <textarea name="" className='txt' cols="30" rows="10" disabled={disabled} value={value} id={label + type + disabled}></textarea>
-                                :
-                                <input type={type} className='txt' required={required} onChange={onChange} disabled={disabled} value={value} id={label + type + disabled} />
+                : type === 'radio' ?
+                    <div className="radioGroup txt">
+                        {opts.map((opt) => {
+                            return (
+                                <div className="" key={opts.indexOf(opt)} id={label + type + disabled}>
+                                    <label htmlFor={opt}>{opt}</label>
+                                    <input type="radio" name={label} id={opt} onChange={onChange} disabled={disabled} value={value} />
+                                </div>
+                            )
+                        })}
+                    </div>
+                : type === 'password' ?
+                    <div className="password">
+                        <input type={pwVisible ? 'text' : 'password'} className="txt" required={required} onChange={onChange} disabled={disabled} value={value} id={label + type + disabled} />
+                        <button type="button" className="info btn" onClick={showPw}> <Icon type={pwVisible ? 'eye_on' : 'eye_off'} /></button>
+                    </div>
+                : type === 'textarea' || type === 'textArea' ?
+                    <textarea name="" className='txt' cols="30" rows="10" disabled={disabled} value={value} id={label + type + disabled}></textarea>
+                :
+                    <input
+                        type={type}
+                        className='txt'
+                        required={required}
+                        onChange={onChange}
+                        disabled={disabled}
+                        value={value}
+                        id={label + type + disabled}
+                    />
+
             }
-            { children }
+            {
+                icon
+                    ?
+                    <Icon type={icon} className={'inputIcon'} />
+                    : ''
+            }
+            {children}
         </div>
     )
 }

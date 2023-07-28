@@ -1,4 +1,4 @@
-import Icon from "./Icon"
+import { BiLoader } from "react-icons/bi"
 
 export default function Button({children='', cType='primary', outline=false, block=false, action=()=>{}, loading=false, type='button', round=false, icon='', toolTip='', disabled}){
     
@@ -21,29 +21,14 @@ export default function Button({children='', cType='primary', outline=false, blo
         >
             {
                 loading 
-                ?
-                <Icon type='load'/>
-                :
-                children
-                ?
-                    icon
-                    ?
-                    <>{children} <Icon type={icon} iconStyle={{ marginLeft: '10px' }}/></>
-                    :
-                    children
-                :
-                icon 
-                ?
-                <Icon type={icon}/>
-                : ''
+                ? <BiLoader/>
+                : children
+                ? icon
+                    ? <>{children} {icon({style:{marginLeft:10}})}</>
+                    : children
+                : icon && <>{icon()}</>
             }
-            {
-                toolTip 
-                ?
-                <span className="toolTip">{toolTip}</span>
-                :
-                ''
-            }
+            { toolTip ? <span className="toolTip">{toolTip}</span> : '' }
         </button>
     )
 }

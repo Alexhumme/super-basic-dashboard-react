@@ -1,3 +1,4 @@
+import { FaCheck, FaCross } from "react-icons/fa"
 import Avatar from "../Avatar"
 import Button from "../Button"
 import FormItem from "../FormItem"
@@ -17,8 +18,8 @@ export default function UserData({user = null}){
         <FormItem label="contraseña" type="password" disabled hatLabel /> 
         </div>
         <div className="user__footer">
-        <Button cType="dark" icon="cross" disabled>Descartar Cambios</Button>
-        <Button cType="info" icon="check" disabled>Aplicar Cambios</Button>
+        <Button cType="dark" icon={FaCross} disabled>Descartar Cambios</Button>
+        <Button cType="info" icon={FaCheck} disabled>Aplicar Cambios</Button>
         </div>
     </div>
     )

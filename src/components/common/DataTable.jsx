@@ -1,3 +1,4 @@
+import { FaCalendar, FaDownload, FaEdit, FaInfo, FaTrash } from 'react-icons/fa'
 import '../../assets/styles/dataTable.scss'
 import Button from './Button'
 
@@ -31,11 +32,11 @@ export default function DataTable({data={cols:[],rows:[]}, title='titulo'}){
                                     })
                                 }
                                 <td className='opciones'>
-                                    <Button cType='danger' round icon='delete' toolTip='Eliminar'/>
-                                    <Button cType='info' round icon='info' toolTip='Informacion'/>
-                                    <Button cType='secondary' round icon='edit' toolTip='Editar'/>
-                                    <Button cType='success' round icon='download' toolTip='Descargar'/>
-                                    <Button cType='primary' round icon='asign'toolTip='Asignar a horario'/>
+                                    <Button cType='danger' round icon={FaTrash} toolTip='Eliminar'/>
+                                    <Button cType='info' round icon={FaInfo} toolTip='Informacion'/>
+                                    <Button cType='secondary' round icon={FaEdit} toolTip='Editar'/>
+                                    <Button cType='success' round icon={FaDownload} toolTip='Descargar'/>
+                                    <Button cType='primary' round icon={FaCalendar} toolTip='Asignar a horario'/>
                                 </td>
                             </tr>
                         )

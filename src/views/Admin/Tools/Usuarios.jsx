@@ -2,6 +2,7 @@ import DataTable from "../../../components/common/DataTable"
 import FormItem from "../../../components/common/FormItem"
 import Button from "../../../components/common/Button"
 import ModuleHead from "../../../components/common/ModuleHead"
+import { FiAlertTriangle } from "react-icons/fi"
 
 export default function Usuarios(){
     
@@ -11,7 +12,7 @@ export default function Usuarios(){
             <div>
                 <FormItem type="password" value={'000000'} label="contraseña de Acceso aprendiz" disabled >
 
-                <Button cType="warning" icon="warning"
+                <Button cType="warning" icon={FiAlertTriangle}
                     toolTip={`
                     Al cambiar la clave comun especifica la contraseña necesaria
                     para que los aprendices puedan relizar consultas sobre sus asignaciones.

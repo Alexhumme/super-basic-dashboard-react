@@ -12,6 +12,12 @@
             box-shadow: 0px 2px $secondary-color;
         }
     }
+    tbody {
+        tr:nth-child(even) {
+            background-color: $secondary-color-l;
+            
+          }
+    }
     td, th{
         padding: 5px;
         &.opciones{

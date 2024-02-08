@@ -1,7 +1,18 @@
 import { BiLoader } from "react-icons/bi"
 
-export default function Button({children='', cType='primary', outline=false, block=false, action=()=>{}, loading=false, type='button', round=false, icon='', toolTip='', disabled}){
-    
+export default function Button({
+    children='', 
+    cType='primary', 
+    outline=false, 
+    block=false, 
+    action=()=>{}, 
+    loading=false, 
+    type='button', 
+    round=false, 
+    icon='', 
+    toolTip='', 
+    disabled
+}){ 
     return(
         <button 
         type={type}

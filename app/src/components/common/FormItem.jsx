@@ -10,15 +10,15 @@ export default function FormItem({
     required,
     disabled = false,
     value,
-    hatLabel = false,
     icon = "",
 }) {
     const [pwVisible, setPwVisivle] = useState(false);
+    const id = (label + type + !disabled && '').replace(" ", "_")
     const showPw = () => {
         pwVisible ? setPwVisivle(false) : setPwVisivle(true);
     };
     return (
-        <div className={"formItem" + (hatLabel ? " hatLabel" : "")}>
+        <div className={"formItem " + type}>
             <label htmlFor={label + type + (!disabled && '')}>
                 {required ? <i>*</i> : <></>} {label}{" "}
             </label>
@@ -29,7 +29,7 @@ export default function FormItem({
                     required={required}
                     disabled={disabled}
                     value={value}
-                    id={label + type + !disabled && ''}
+                    id={id}
                 >
                     {opts.map((opt) => {
                         return (
@@ -46,7 +46,7 @@ export default function FormItem({
                             <div
                                 className=""
                                 key={opts.indexOf(opt)}
-                                id={label + type + !disabled && ''}
+                                id={id}
                             >
                                 <label htmlFor={opt}>{opt}</label>
                                 <input
@@ -70,10 +70,10 @@ export default function FormItem({
                         onChange={onChange}
                         disabled={disabled}
                         value={value}
-                        id={label + type + !disabled && ''}
+                        id={id}
                     />
-                    <button type="button" className="info btn" onClick={showPw}>
-                        { pwVisible ? <FaEye/>:<FaEyeSlash/> }
+                    <button type="button" className="primary btn" onClick={showPw}>
+                        {pwVisible ? <FaEye /> : <FaEyeSlash />}
                     </button>
                 </div>
             ) : type === "textarea" || type === "textArea" ? (
@@ -84,8 +84,14 @@ export default function FormItem({
                     rows="10"
                     disabled={disabled}
                     value={value}
-                    id={label + type + !disabled && ''}
+                    id={id}
                 ></textarea>
+            ) : type === "checkbox" ? (
+                <input type="checkbox" required={required}
+                    onChange={onChange}
+                    disabled={disabled}
+                    value={value}
+                    id={id} />
             ) : (
                 <input
                     type={type}
@@ -94,10 +100,10 @@ export default function FormItem({
                     onChange={onChange}
                     disabled={disabled}
                     value={value}
-                    id={label + type + !disabled && ''}
+                    id={id}
                 />
             )}
-            {icon ? icon({className:"inputIcon"}) : ""}
+            {icon ? icon({ className: "inputIcon" }) : ""}
             {children}
         </div>
     );

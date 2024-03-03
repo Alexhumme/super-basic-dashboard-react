@@ -9,10 +9,10 @@ input[type=radio], input[type=checkbox] { cursor: pointer }
 .btn {
     transition: 0.2s;
     border: solid 2px;
-    border-radius: 8px;
+    border-radius: 0;
     padding: 15px;
     font-weight: bolder;
-    margin: 5px;
+    margin: 5px 10px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -28,9 +28,6 @@ input[type=radio], input[type=checkbox] { cursor: pointer }
         }
     }
     @include color-types;
-    .block-btn {
-        width: 100%;
-    }
     @include tool-tip;
 }
 

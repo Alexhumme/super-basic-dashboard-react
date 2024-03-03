@@ -1,0 +1,31 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Jorge",
+            "lastName": "Lincon",
+            "phoneNumber": "315673902",
+            "birth_date": "10-04-2002",
+            "email": "Joli@mockmail.com",
+            "password": "9cu21f03i"
+        },
+        {
+            "id": 2,
+            "name": "Jennifer",
+            "lastName": "Howards",
+            "phoneNumber": "3026981234",
+            "birth_date": "23-01-1993",
+            "email": "Joli@mockmail.com",
+            "password": "9cu21f03i"
+        },
+        {
+            "id": 3,
+            "name": "Lucas",
+            "lastName": "Marques",
+            "phoneNumber": "320401498",
+            "birth_date": "2-10-2000",
+            "email": "Joli@mockmail.com",
+            "password": "9cu21f03i"
+        }
+    ]
+}

@@ -12,8 +12,8 @@ export default function Navbar() {
         <nav className="nav primary">
             <div className="navbar">
                 <i className="iconPage" onClick={() => navigate('/')}>
-                    <img src={logo} alt="Logo-Sena" />
-                    Horarios Sena
+                    <img src={logo} alt="logo" />
+                    Super Simple Dashboard
                 </i>
                 {
                     auth &&

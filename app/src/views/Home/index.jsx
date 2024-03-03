@@ -1,18 +1,15 @@
 import logo from "../../assets/Sena_Colombia_logo.svg"
-import FormSelector from "./FormSelector"
+import HomeForm from "./HomeForm"
 
 export default function Home() {
     return (
         <>
-            <section className="top">
-                <div className="horario-consulta-container">
-
-                </div>
-                <div className="ingresar">
-                    <FormSelector />
+            <section className="login-top">
+                <div className="login-form">
+                    <HomeForm />
                 </div>
             </section>
-            <section className="bottom">
+            <section className="login-bottom">
                 <article>
                 <h3>CENTRO INDUSTRIAL Y DE ENERGIAS ALTERNATIVAS SENA</h3>
                 La Entidad más querida por los colombianos funciona desde su creación en permanente alianza entre el

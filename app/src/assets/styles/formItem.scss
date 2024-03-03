@@ -1,30 +1,25 @@
 @import 'colors';
 
 .formItem{
-    margin: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    &.hatLabel{
-        display: inline-block;
-        label{
-            margin-left: -10px;
-            display: block;
-            font-size: smaller;
+    margin: 10px 10px 10px 10px;
+    display: grid;
+    label{ font-size: x-small }
+    i { color: $danger-color }
+    input:left {color: red}
+    &.checkbox {
+        display: flex;
+        label {
+            font-size: small;
+            position: absolute;
+            margin-left: 2rem;
+            margin-top: 0.1rem;
         }
-    }
-    i{
-        color: $danger-color;
-    }
-    input:left{
-        color: red;
     }
     .txt{
         padding: 15px;
-        border: solid 2px $secondary-color;
+        border: none;
         background-color: $secondary-color-l;
-        width: 180px;
-        border-radius: 5px;
+        width: -moz-aviable;
         transition: 0.2s;
         &:hover:not(:disabled){
             border-color: $info-color-l;
@@ -38,24 +33,18 @@
             height: 20px;
         }
     }
+    
     .password{
-        width: 214px;
         display: flex;
-        .txt{
-            border-radius: 5px 0px 0px 5px;
-            width: 75%;
-        }
+        .txt{ width: 75% }
         .btn{
             height: 49px;
             width: 25%;
-            border-radius: 0px 5px 5px 0px;
             @include color-types;
             margin: 0px;
         }
     }
-    .select{
-        width:214px;
-    }
+    .select{ width:214px }
     .radioGroup{
         color: $dark-color-l;
         div{
@@ -69,7 +58,6 @@
             padding: 5px 3px 10px 3px;
         }
     }
-    textArea{
-        width: 100%;
-    }
+    textArea{ width: 100% }
+    
 }

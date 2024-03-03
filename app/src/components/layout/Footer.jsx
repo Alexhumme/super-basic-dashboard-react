@@ -2,7 +2,8 @@ export default function Footer(){
     return (
         <footer className="footer">
             <span className="copyright">
-            © 2022 CENTRO INDUSTRIAL Y DE ENERGIAS ALTERNATIVAS - Todos los derechos reservados.
+            © 2024 Super Simple Dashboard - Created by
+            <a href=""> AlexHumme</a>
             </span>
             <span>
             Riohacha (La Guajia) - Colombia

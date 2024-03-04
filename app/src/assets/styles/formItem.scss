@@ -1,13 +1,28 @@
-@import 'colors';
+@import "colors";
 
-.formItem{
+.formItem {
     margin: 10px 10px 10px 10px;
     display: grid;
-    label{ font-size: x-small }
-    i { color: $danger-color }
-    input:left {color: red}
+
+    label {
+        font-size: x-small;
+
+        +.txt+.inputIcon {
+            margin-top: 14.25px;
+        }
+    }
+
+    i {
+        color: $danger-color;
+    }
+
+    input:left {
+        color: red;
+    }
+
     &.checkbox {
         display: flex;
+
         label {
             font-size: small;
             position: absolute;
@@ -15,49 +30,71 @@
             margin-top: 0.1rem;
         }
     }
-    .txt{
+
+    .txt {
         padding: 15px;
-        border: none;
+        border: solid 1px $secondary-color-l;
         background-color: $secondary-color-l;
-        width: -moz-aviable;
         transition: 0.2s;
-        &:hover:not(:disabled){
+
+        &:hover:not(:disabled) {
             border-color: $info-color-l;
         }
-        +.inputIcon{
-            color: $secondary-color;
+
+        +.inputIcon {
+            background-color: $secondary-color;
+            color: $light-color-l;
             position: absolute;
-            margin-left: -35px;
+            width: 20px;
+            height: 20px;
+            padding: 14px;
+        }
+    }
+
+    .password {
+        display: flex;
+
+        +.inputIcon {
+            background-color: $secondary-color;
+            color: $light-color-l;
+            position: absolute;
             margin-top: 14.25px;
             width: 20px;
             height: 20px;
+            padding: 14px;
         }
-    }
-    
-    .password{
-        display: flex;
-        .txt{ width: 75% }
-        .btn{
+
+        .txt {
+            width: 75%;
+        }
+
+        .btn {
             height: 49px;
-            width: 25%;
             @include color-types;
             margin: 0px;
         }
     }
-    .select{ width:214px }
-    .radioGroup{
+
+    .select {
+        width: 214px;
+    }
+
+    .radioGroup {
         color: $dark-color-l;
-        div{
+
+        div {
             display: flex;
             width: 100%;
             justify-content: space-around;
             align-items: center;
             margin: 5px 0px;
-            
+
             border-bottom: solid 1px $secondary-color;
             padding: 5px 3px 10px 3px;
         }
     }
-    textArea{ width: 100% }
-    
+
+    textArea {
+        width: 100%;
+    }
 }

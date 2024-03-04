@@ -6,7 +6,7 @@ export default function Footer(){
             <a href=""> AlexHumme</a>
             </span>
             <span>
-            Riohacha (La Guajia) - Colombia
+            A React.js - Template
             </span>
         </footer>
     )

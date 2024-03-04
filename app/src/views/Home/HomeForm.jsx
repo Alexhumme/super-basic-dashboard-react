@@ -3,6 +3,8 @@ import FormItem from "../../components/common/FormItem";
 import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import { useState } from "react";
+import { FaDoorOpen, FaLinux, FaMailBulk, FaMailchimp } from "react-icons/fa";
+import { BiEnvelope, BiLock, BiLogIn } from "react-icons/bi";
 
 export default function HomeForm() {
     const [form, setForm] = useState({
@@ -10,25 +12,23 @@ export default function HomeForm() {
         password : null,
         remember : false
     });
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false)
 
     const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setLoading(true)
+        setLoading(true);
         setTimeout(()=>{
-            /*signInWithEmailAndPassword(auth, email, password).then((response) => {
-                sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
+            if (form.remember){
+                sessionStorage.setItem('Auth Token', "response._tokenResponse.refreshToken")
+                console.log(form)
                 navigate("/admin")
-            }).catch((err) => {
+            } else {
                 toast.error(`Wrong email or password`, {
-                    position: toast.POSITION.TOP_RIGHT
+                    position: toast.POSITION.BOTTOM_LEFT
                 })
-            })*/
-            console.log(form)
+            }
             setLoading(false)
         }, 1000)
 
@@ -38,11 +38,11 @@ export default function HomeForm() {
         <div className="form-container">
             <span className="form-title">Log-in</span>
             <form onSubmit={handleSubmit}>
-                <FormItem hatLabel label='Email' onChange={(e) => setEmail(e.target.value)} required />
-                <FormItem hatLabel label='Password' type="password" onChange={(e) => setPassword(e.target.value)} required />
-                <FormItem label="Remember me" type="checkbox" onChange={(e)=>setForm((form)=>form+{remember : e.target.value})}/>
-                <Button block type="submit" loading={loading}>Iniciar sesion</Button>
-                <Button outline type="reset">Recuperar contraseña</Button>
+                <FormItem icon={BiEnvelope} hatLabel label='Email' type="email" onChange={(e) => setForm({...form, email : e.target.value})} required />
+                <FormItem icon={BiLock} hatLabel label='Password' type="password" onChange={(e) => setForm({...form, password : e.target.value})} required />
+                <FormItem label="Remember me" type="checkbox" onChange={(e)=>setForm({...form, remember: !form.remember})}/>
+                <Button block type="submit" icon={BiLogIn} loading={loading}>Log In</Button>
+                <Button outline type="reset">Recover Password</Button>
             </form>
         </div>
     )

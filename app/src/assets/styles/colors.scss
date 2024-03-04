@@ -1,4 +1,4 @@
-$primary-color: rgb(0, 57, 133);
+$primary-color: rgb(69, 0, 133);
 $primary-color-l: rgb(96, 116, 228);
 $danger-color: rgb(255, 64, 64);
 $danger-color-l: rgb(255, 143, 143);
@@ -17,7 +17,7 @@ $secondary-color-l: rgb(226, 226, 226);
 $dark-color: black;
 $dark-color-l: rgb(48, 48, 48);
 
-@mixin color-type($color1:$primary-color, $color2:$primary-color-l,$font-color:$light-color) {
+@mixin color-type($color1:$primary-color, $color2:$primary-color-l, $font-color:$light-color) {
     background-color: $color1;
     color: $font-color;
     border-color: $color1;
@@ -60,8 +60,8 @@ $dark-color-l: rgb(48, 48, 48);
     &.secondary { @include color-type($secondary-color, $secondary-color-l, $dark-color) }
 }
 
-@mixin tool-tip{
-        .toolTip{
+@mixin tool-tip {
+        .toolTip {
             visibility: hidden;
             background-color: $dark-color-l;
             color: $light-color;

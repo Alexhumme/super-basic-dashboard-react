@@ -15,7 +15,7 @@ export default function Layout({ children }) {
         let authToken = sessionStorage.getItem('Auth Token')
         if (!authToken) {
             navigate('/')
-            toast.info('Por favor complete el ingreso',{
+            toast.info('Please complete Login ',{
                 position: toast.POSITION.BOTTOM_RIGHT
             })
         }

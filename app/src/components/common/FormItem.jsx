@@ -1,4 +1,4 @@
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaArrowRight, FaEye, FaEyeSlash } from "react-icons/fa";
 import { useState } from "react";
 
 export default function FormItem({
@@ -10,18 +10,18 @@ export default function FormItem({
     required,
     disabled = false,
     value,
-    icon = "",
+    icon,
 }) {
     const [pwVisible, setPwVisivle] = useState(false);
-    const id = (label + type + !disabled && '').replace(" ", "_")
+    const id = (label + type + (!disabled && '')).replace(' ', '_');
     const showPw = () => {
         pwVisible ? setPwVisivle(false) : setPwVisivle(true);
     };
     return (
         <div className={"formItem " + type}>
-            <label htmlFor={label + type + (!disabled && '')}>
+            {label && (<label htmlFor={id}>
                 {required ? <i>*</i> : <></>} {label}{" "}
-            </label>
+            </label>)}
             {type === "selector" ? (
                 <select
                     className="txt select"

@@ -36,6 +36,7 @@
         border: solid 1px $secondary-color-l;
         background-color: $secondary-color-l;
         transition: 0.2s;
+        margin-left: 48px;
 
         &:hover:not(:disabled) {
             border-color: $info-color-l;

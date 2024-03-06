@@ -1,27 +1,27 @@
 import MenuComponent from "../../common/MenuComponent"
 
+const rutas = [
+    {
+        text: 'Dashboard',
+        to: '/admin/'
+    },
+    {
+        text: 'Documentation',
+        to: '/admin/administracion/instructores'
+    },
+    {
+        text: 'About',
+        to: '/admin/administracion/fichas'
+    },
+    {
+        text: 'Contact me',
+        to: '/admin/administracion/ambientes'
+    },
+    {
+        text: 'Page 5'
+    }
+]
 export default function Sidebar() {
-    const rutas = [
-        {
-            text: 'Panel de control',
-            to: '/admin/'
-        },
-        {
-            text: 'Instructores',
-            to: '/admin/administracion/instructores'
-        },
-        {
-            text: 'Fichas',
-            to: '/admin/administracion/fichas'
-        },
-        {
-            text: 'Ambientes',
-            to: '/admin/administracion/ambientes'
-        },
-        {
-            text: 'Competencias'
-        }
-    ]
     return (
         <aside className="sidebar light">
             <div>

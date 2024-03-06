@@ -1,6 +1,6 @@
 import IconoUsuario from "./IconoUsuario";
 import { useNavigate } from "react-router-dom";
-import logo from '../../../assets/Sena_Colombia_logo.svg'
+import logo from '../../../assets/logo.svg'
 
 export default function Navbar() {
     const navigate = useNavigate()

@@ -1,3 +1,5 @@
+import { FaReact } from "react-icons/fa";
+
 export default function Footer(){
     return (
         <footer className="footer">
@@ -6,7 +8,7 @@ export default function Footer(){
             <a href=""> AlexHumme</a>
             </span>
             <span>
-            A React.js - Template
+            <FaReact/> A React.js - Template
             </span>
         </footer>
     )

@@ -19,7 +19,14 @@ export default function HomeForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
         setLoading(true);
-        setTimeout(()=>{
+        fetch("https://localhost:8000/users").then((response) => {
+            return response.json()
+        }).then((data)=>{
+            console.log(data)
+        })
+        setLoading(false)
+        /*setTimeout(()=> {
+
             if (form.remember){
                 sessionStorage.setItem('Auth Token', "response._tokenResponse.refreshToken")
                 console.log(form)
@@ -29,8 +36,7 @@ export default function HomeForm() {
                     position: toast.POSITION.BOTTOM_LEFT
                 })
             }
-            setLoading(false)
-        }, 1000)
+        }, 1000)*/
 
     }
 
